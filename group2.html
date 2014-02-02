@@ -76,19 +76,26 @@
 	
 	<p>Where <span lang="latex">\{y\}_k</span> and <span lang="latex">\{e\}_k</span> are the magnitudes and error bars of the lightcurve of source k, respectively, iqr is the interquartile range and med is the median.</p>
 	
-	<p>After the correction, we use the Stetson J index (Stetson 1996) to test the variability of the source. It is a robust method to decide if a time series shows variability or not, relating the measurements and the error associated with those.
-</p>
+	<p>After the correction, we use the Stetson J index (Stetson 1996) to test the variability of the source. It is a robust method to decide if a time series shows variability or not, relating the measurements and the error associated with those.</p>
+
 	<center>
 	<div lang="latex">J=\frac{\sum_{k=1}^n w_k\cdot sgn(P_k)\cdot \sqrt{\abs{P_k}}}{\sum_{k=1}^n w_k}</div>
 	<div lang="latex">P_k = \delta_{i(k)}\delta_{j(k)}\delta=\sqrt{\frac{n}{n-1}}\frac{y - \bar{y}}{e}</div>
-		
 	</center>
 	
 	<p>We use <span lang="latex">|J|>1</span> as a criteria for choosing variable candidates. In this step, 1780 out of 68739 point sources were labeled as variable candidates. Figure X highlights the variable candidates with red cross among all of our point sources shown with blue circles. In the figure X is possible to see that objects with a Stetson J index close to zero are most likely non-variable object, while if the absolute value of the index is greater than zero, that object should be a variable one.</p>
 	
 	<center>
-	<img class="" src="img/allvarcand_mod.png" >
+	<img class="" src="img/allvarcand_mod.png" width="70%" height="70%">
 	</center>
+	
+	<h3>Periodic discrimination</h3>
+	<p>One subclass of variable objects that are important to separate are the periodic ones. Although there are other variable stellar objects that also could be interesting to identify. With that idea, we developed a classifier that can associate probabilities of belong to every of the following classes:</p>
+	<li><b>Periodic:</b> encompasses objects that vary cyclically with time. Within this group are included, for example, pulsating stars and eclipsing systems and subclassifications. As they vary with a period is possible to observe these variables in multiple cycles to more accurately determine its parameters, e.g. size, distance, temperature and even separation between binary stars.</li>
+	<li><b>Quasar:</b>: or quasi-stellar radio source is an AGN (active galactic nucleus) that is very distant from us but extremely energetic. Consist of a supermassive black hole that interacts irregularly with the material of the host galaxy, this is why we see random variations in their behavior.</li>
+	<li><b>Microlensing:</b> astrophysical effect that greatly increase the brightness of a distant object through another closer aligned, serving as 'magnifying glass'. The intermediate object can be a star, planet or moon while there is an alignment with the background source.</li>
+	<li><b>Supernova:</b> is a stellar explosion as the last step of the evolution of a star. They are extremely bright, sometimes more than an entire galaxy, and its brightness will drastically increase in the first days and then decline over several weeks or months due to radioactive material is expelled. This event is the primarily responsible for the chemical enrichment of the universe, all elements heavier than iron are produced in this explosion.</li>
+
         </div>  
 	</div>    
 	<div class="footer">
