@@ -24,6 +24,9 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+
+
   </head>
 
   <body>
@@ -50,12 +53,37 @@
 
       <div class="row marketing">
         <div class="col-md-12">
-
-        <p>
-        We apply a multi-stage classification pipeline (see figure below) to the lightcurve data to isolate variable sources and identify candidates for follow up observation. First, we utilize the Stetson J index (Stetson 1996) to determine variability. For subsequent stages, we apply random forest classifiers with features derived from the lightcurves’ period and statistics, as well as color information from matched sources in various catalogs. Using sample lightcurves from the OGLE, MACHO, and ASAS databases for training and test sets, we achieve 97.4% accuracy with our periodic classifier, 84.4% for eclipsing subtypes, and 97.5% for pulsating subtypes. 
+	
+	<h3>Task Descripction</h3>
+	<p>The objective of our work was to develop a classifier of different types of stellar objects. The information available about those objects was the radius, the position in the sky in celestial coordinates, and the time series of 16 points (4 each night, 4 nights). We decided to use a decision tree for this purpose, in order to classify from general objects like galaxies or stars  to specific subclasses of variable stars. The decisions include probabilities, so at the end we have a probability of belonging at each terminal class. </p>
+        
         <center>
-          <img class="" src="img/group2_flowchart.png" />
+          <img class="" src="img/group2_flowchart.png" width="70%" height="70%"/>
         </center>
+        
+        <h3>Star/galaxy clasifier</h3>
+        <p>The information used for this classifier is only the radius information. Stars should be point sources, with a radius of less than a certain number of pixels and without big variations from one epoch to another.</p>
+        
+        
+        <h3>Variability test </h3>
+        <p>We found that the derived photometric error of our data tend to be too small, which made most of our sources look like variable, while realistically less than 10% of the stellar objects are variable.  We thus first correct the error bars using the method introduced by Protopapas et al. (2013). The idea is that for a non-variable source, the error bar should be comparable to the interquartile range of the source magnitude. For N_s sources in a given CCD we fit an error correction parameter which minimizes </p>
+        
+        <center>
+        <div lang="latex">
+	\alpha_cf = arg min_{\alpha} \sum_{k=1}^{N_s} \left(iqr({y}_k)-\alpha med({e}_k)\right)^2
+	</div>
+	</center>
+	
+	<p>Where <span lang="latex">\{y\}_k</span> and <span lang="latex">\{e\}_k</span> are the magnitudes and error bars of the lightcurve of source k, respectively, iqr is the interquartile range and med is the median.</p>
+	
+	<p>After the correction, we use the Stetson J index (Stetson 1996) to test the variability of the source. It is a robust method to decide if a time series shows variability or not, relating the measurements and the error associated with those.
+</p>
+	<center>
+	<div lang="latex">J=\frac{\sum_{k=1}^n w_k\cdot sgn(P_k)\cdot \sqrt{\abs{P_k}}}{\sum_{k=1}^n w_k}</div>
+	<div lang="latex">P_k = \delta_{i(k)}\delta_{j(k)}\delta=\sqrt{\frac{n}{n-1}}\frac{y - \bar{y}}{e}</div>
+		
+	</center>
+	
         </div>  
 	</div>    
 	<div class="footer">
@@ -73,8 +101,5 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
   </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> b11d7cf8a7a3c31742e704e32c3ebeb842da3efc
+
