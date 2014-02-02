@@ -50,9 +50,13 @@
 
       <div class="row marketing">
         <div class="col-md-12">
-
+	
+	<h2>Task Descripction</h2>
+	<p>The objective of our work was to develop a classifier of different types of stellar objects. The information available about those objects was the radius, the position in the sky in celestial coordinates, and the time series of 16 points (4 each night, 4 nights). We decided to use a decision tree for this purpose, in order to classify from general objects like galaxies or stars  to specific subclasses of variable stars.<br>The decisions include probabilities, so at the end we have a probability of belonging at each terminal class. </p>
         <p>
         We apply a multi-stage classification pipeline (see figure below) to the lightcurve data to isolate variable sources and identify candidates for follow up observation. First, we utilize the Stetson J index (Stetson 1996) to determine variability. For subsequent stages, we apply random forest classifiers with features derived from the lightcurves’ period and statistics, as well as color information from matched sources in various catalogs. Using sample lightcurves from the OGLE, MACHO, and ASAS databases for training and test sets, we achieve 97.4% accuracy with our periodic classifier, 84.4% for eclipsing subtypes, and 97.5% for pulsating subtypes. 
+	</p>
+
         <center>
           <img class="" src="img/group2_flowchart.png" />
         </center>
