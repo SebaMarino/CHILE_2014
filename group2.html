@@ -96,6 +96,55 @@
 	<li><b>Microlensing:</b> astrophysical effect that greatly increase the brightness of a distant object through another closer aligned, serving as 'magnifying glass'. The intermediate object can be a star, planet or moon while there is an alignment with the background source.</li>
 	<li><b>Supernova:</b> is a stellar explosion as the last step of the evolution of a star. They are extremely bright, sometimes more than an entire galaxy, and its brightness will drastically increase in the first days and then decline over several weeks or months due to radioactive material is expelled. This event is the primarily responsible for the chemical enrichment of the universe, all elements heavier than iron are produced in this explosion.</li>
 
+	<p>The light curve information was obtained from several databases including:<br>
+	<b>OGLE</b> (Optical Gravitational Lensing Experiment): periodic and microlensing database.<br>
+	<b>MACHO</b> (MAssive Compact Halo Objects): quasar database.<br>
+	<b>CfA</b> (Center for Astrophysics): SNe database.</p>
+       
+        <p>This classifier is a random forest trained with statistical values obtained from the light curves of each object. Those statistics are the following:</p>
+        
+        <table border="1">
+        <tr>
+	<td><b>Statistic</b></td>
+	<td><b>Description</b></td>
+	</tr>
+	<tr>
+	<td>Standard Deviation</td>
+	<td>This statistic shows how much variation or dispersion from the average exists</td>
+	</tr>
+	<tr>
+	<td>Skewness</td>
+	<td>Statistic that measures the asymmetry of the distribution of the samples. In this cases, we compute the skewness of the flux measurements for each lightcurve.</td>
+	</tr>
+	<tr>
+	<td>Kurtosis</td>
+	<td>Another statistic related to the shape of the data. Kurtosis measures the peaks of the data, and how far away are from the mean.</td>
+	</tr>
+	<tr>
+	<td>Median Absolute Deviation</td>
+	<td>Measure related to the distance between the samples and the median value of them. It is robust when only few data points are available.</td>
+	</tr>
+	<tr>
+	<td>Interquartile Range</td>
+	<td>Measure of the dispersion of the distribution. It’s compute as the first quartile (we there is the higher 25% of the data) minus the third quartile (with the lower 25% of the data).</td>
+	</tr>
+	<tr>
+	<td>Stetson J index</td>
+	<td>Variability index </td>
+	</tr>
+	<tr>
+	<td>QSO index</td>
+	<td>Variability index for quasar identification. Proposed by Butler and Bloom on 2011.</td>
+	</tr>
+	<tr>
+	<td>Non-QSO index</td>
+	<td>Fit statistic for non-QSO variable star.</td>
+	</tr>
+	</table>	
+	
+	<p>This classifier got XX% accuracy for the test set.</p>
+	
+	        	
         </div>  
 	</div>    
 	<div class="footer">
