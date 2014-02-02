@@ -66,11 +66,16 @@
         
         
         <h3>Variability test </h3>
-        <p>We found that the derived photometric error of our data tend to be too small, which made most of our sources look like variable, while realistically less than 10% of the stellar objects are variable.  We thus first correct the error bars using the method introduced by Protopapas et al. (2013). The idea is that for a non-variable source, the error bar should be comparable to the interquartile range of the source magnitude. For N_s sources in a given CCD we fit an error correction parameter which minimizes 
-        
-        <span lang="latex">
+        <p>We found that the derived photometric error of our data tend to be too small, which made most of our sources look like variable, while realistically less than 10% of the stellar objects are variable.  We thus first correct the error bars using the method introduced by Protopapas et al. (2013). The idea is that for a non-variable source, the error bar should be comparable to the interquartile range of the source magnitude. For N_s sources in a given CCD we fit an error correction parameter which minimizes <span lang="latex">
 	\alpha_cf = arg min_{\alpha} \sum_{k=1}^{N_s} \left(iqr({y}_k)-\alpha med({e}_k)\right)^2
-	</span>	<\p>
+	</span>where <span lang="latex">\{y\}_k</span> and <span lang="latex">\{e\}_k</span> are the magnitudes and error bars of the lightcurve of source k, respectively, iqr is the interquartile range and med is the median. 	<\p>
+	
+	<p>After the correction, we use the Stetson J index (Stetson 1996) to test the variability of the source. It is a robust method to decide if a time series shows variability or not, relating the measurements and the error associated with those.
+</p>
+	<center>
+	<div lang="latex">J=\frac{\sum_{k=1}^n w_k\cdot sgn(P_k)\cdot \sqrt{\abs{P_k}}}{\sum_{k=1}^n w_k}</div>
+	</center>
+	
         </div>  
 	</div>    
 	<div class="footer">
