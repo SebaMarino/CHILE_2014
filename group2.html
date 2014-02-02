@@ -66,11 +66,11 @@
         
         
         <h3>Variability test </h3>
-        <p>We found that the derived photometric error of our data tend to be too small, which made most of our sources look like variable, while realistically less than 10% of the stellar objects are variable.  We thus first correct the error bars using the method introduced by Protopapas et al. (2013). The idea is that for a non-variable source, the error bar should be comparable to the interquartile range of the source magnitude. For N_s sources in a given CCD we fit an error correction parameter which minimizes</p>
+        <p>We found that the derived photometric error of our data tend to be too small, which made most of our sources look like variable, while realistically less than 10% of the stellar objects are variable.  We thus first correct the error bars using the method introduced by Protopapas et al. (2013). The idea is that for a non-variable source, the error bar should be comparable to the interquartile range of the source magnitude. For N_s sources in a given CCD we fit an error correction parameter which minimizes 
         
         <div lang="latex">
-	\frac{1+sin(x)}{y}
-	</div>	
+	\alpha_cf = arg min_{\alpha} \sum_{k=1}^{N_s} \left(iqr({y}_k)-\alpha med({e}_k)\right)^2
+	</div>	<\p>
         </div>  
 	</div>    
 	<div class="footer">
