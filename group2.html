@@ -55,11 +55,15 @@
 	<p>The objective of our work was to develop a classifier of different types of stellar objects. The information available about those objects was the radius, the position in the sky in celestial coordinates, and the time series of 16 points (4 each night, 4 nights). We decided to use a decision tree for this purpose, in order to classify from general objects like galaxies or stars  to specific subclasses of variable stars. The decisions include probabilities, so at the end we have a probability of belonging at each terminal class. </p>
         
         <center>
-          <img class="" src="img/group2_flowchart.png" width="50%" height="50%"/>
+          <img class="" src="img/group2_flowchart.png" width="70%" height="70%"/>
         </center>
         
-        <p>
-        	
+        <h3>Star/galay clasifier</h3>
+        <p>The information used for this classifier is only the radius information. Stars should be point sources, with a radius of less than a certain number of pixels and without big variations from one epoch to another.</p>
+        
+        
+        <h3>Variability test </h3>
+        <p>We found that the derived photometric error of our data tend to be too small, which made most of our sources look like variable, while realistically less than 10% of the stellar objects are variable.  We thus first correct the error bars using the method introduced by Protopapas et al. (2013). The idea is that for a non-variable source, the error bar should be comparable to the interquartile range of the source magnitude. For N_s sources in a given CCD we fit an error correction parameter which minimizes</p>
         	
         </div>  
 	</div>    
